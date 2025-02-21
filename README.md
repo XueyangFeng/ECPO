@@ -15,23 +15,18 @@ This repository is based on our paper: Expectation Confirmation Preference Optim
 ### Getting Start
 You can use following scripts to install related python package through pip:
 ```
-git clone https://github.com/XueyangFeng/ReHAC.git
-cd ReHAC
+git clone https://github.com/XueyangFeng/ECPO.git
+cd ECPOC
 pip install -r requirements.txt
 ```
 
-### Constructing Training Data
-Here, we give an example where we set $\lambda=0.08$.
-```
-python data_preprocess.py ./dataset/gpt4/hotpotqa.jsonl 0.08 ./hotpotqa/data/advantage_sample_count_0.08.jsonl
-```
-The processed training data is then saved in `./hotpotqa/data/advantage_sample_count_0.08.jsonl` and you should set `TRAIN_DATA_DIR` in run.sh to this path.
+### AILO Environment Construction
 
-You can also find the training data we have processed under `hotpotqa/data/advantage` and `strategyqa/data` and `intercode/data/sql` folders.
+We provide detailed AILO's pipeline code and additional [readme files](./user_simulator/readme.md). For a quick start, you can download the [index file](https://drive.google.com/file/d/1P6QkUrikHnwxNov0fUY3SxWQkl1qve0O/view?usp=drive_link) and unzip it in the ```user_simulator/embedding``` folder. 
 
-### Training and Test Process
+### API Config Settings
 ```
-cd hotpotqa/scripts
+cd config
 sh run.sh
 ```
 
