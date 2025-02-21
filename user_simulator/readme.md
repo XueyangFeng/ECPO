@@ -1,5 +1,4 @@
-# **AILO-Pipeline: Building a Persona-Based Recommendation System**  
-
+# **AILO-Pipeline**
 <div  align="center">    
 <img src="../pic/ailo.png" width = "1000" height = "400" alt="pic" align=center />
 </div>
