@@ -16,19 +16,24 @@ This repository is based on our paper: Expectation Confirmation Preference Optim
 You can use following scripts to install related python package through pip:
 ```
 git clone https://github.com/XueyangFeng/ECPO.git
-cd ECPOC
+cd ECPO
 pip install -r requirements.txt
 ```
 
 ### AILO Environment Construction
 
-We provide detailed AILO's pipeline code and additional [readme files](./user_simulator/readme.md). For a quick start, you can download the [index file](https://drive.google.com/file/d/1P6QkUrikHnwxNov0fUY3SxWQkl1qve0O/view?usp=drive_link) and unzip it in the ```user_simulator/embedding``` folder. 
+We provide detailed AILO's pipeline code and additional [readme files](./user_simulator/readme.md). For a quick start, you can download the [index file](https://drive.google.com/file/d/1P6QkUrikHnwxNov0fUY3SxWQkl1qve0O/view?usp=drive_link) and unzip it in the ```user_simulator/embedding/``` folder. 
 
 ### API Config Settings
-```
-cd config
-sh run.sh
-```
+
+In this article, all LLM calls are made through OpenAI-like interfaces. Please set your API information in config/api_config.json. For closed-source models, please set it directly. For open-source models, please use vllm for local deployment, we provide a example script in ```model/```. 
+
+### Run
+
+For existing prompt-based CRAs, you can set the relevant information directly in main.sh and run it.
+
+For our CRA alignment,  
+
 
 ## Results
 We random sample 100 questions for test for each dataset.
