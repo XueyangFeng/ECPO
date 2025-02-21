@@ -30,9 +30,13 @@ In this article, all LLM calls are made through OpenAI-like interfaces. Please s
 
 ### Run
 
-For existing prompt-based CRAs, you can set the relevant information directly in main.sh and run it.
+For existing prompt-based CRAs, you can set the relevant config directly in main.sh and run it.
 
-For our CRA alignment,  
+Our CRA alignment consist of 4 stages: SGPT (Stage 1), ECPO (Stage 2-4)
+- Simulator-Guided Planning Tuning:
+- Forward Expectation Confirmation
+- Backward Expectation Derivation
+- Preference Optimization
 
 
 ## Results
@@ -51,15 +55,5 @@ The evaluation result of HotpotQA dataset is under the following figure:
 </div>
 
 We provide original evaluation outputs of ReHAC
-under `hotpotqa/results`, `strategyqa/results`, and `intercode/results`.
+under `results/book`, `results/game`, and `results/yelp`.
 
-## Citation
-If you find that ReHAC is helpful for your work, please cite the follow paper.
-```
-@article{feng2024large,
-  title={Large Language Model-based Human-Agent Collaboration for Complex Task Solving},
-  author={Feng, Xueyang and Chen, Zhi-Yuan and Qin, Yujia and Lin, Yankai and Chen, Xu and Liu, Zhiyuan and Wen, Ji-Rong},
-  journal={arXiv preprint arXiv:2402.12914},
-  year={2024}
-}
-```
