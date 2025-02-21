@@ -1,0 +1,119 @@
+{
+    "user_llm": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "type": "string",
+                "description": "The reason for the rating given by the user"
+            },
+            "rating": {
+                "type": "string",
+                "description": "The rating given by the user",
+                "enum": ["0", "1"]
+            },
+            "policy": {
+                "type": "string",
+                "description": "The response strategy selected from predefined options",
+                "enum": [
+                    "ask_recommendation",
+                    "request_more_info",
+                    "provide_feedback",
+                    "end_conversation"
+                ]
+            },
+            "response": {
+                "type": "string",
+                "description": "The user's actual response or feedback"
+            }
+        },
+        "required": ["reason", "rating", "policy", "response"],
+        "dependencies": {
+            "rating": ["reason"]
+        }
+    },
+    "recommender_rater": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "type": "string",
+                "description": "The reason for the rating given by the user"
+            },
+            "rating": {
+                "type": "string",
+                "description": "The rating given by the user",
+                "enum": ["0", "1", "2", "3", "4", "5"]
+            }
+        },
+        "required": ["reason", "rating"]
+    },
+    "policy_rater": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "type": "string",
+                "description": "The reason for the rating given by the user"
+            },
+            "rating": {
+                "type": "string",
+                "description": "The rating given by the user",
+                "enum": ["1", "2", "3", "4", "5"]
+            }
+        },
+        "required": ["reason", "rating"]
+    },
+    "policy_selector": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "type": "string",
+                "description": "The reason for the policy selected by the user"
+            },
+            "policy": {
+                "type": "string",
+                "description": "The response policy selected by the user",
+                "enum": [
+                    "respond_to_clarification",         
+                    "provide_feedback_on_recommendation",         
+                    "end_conversation"                          
+                  ] 
+            }
+        },
+        "required": ["reason", "policy"]
+    },
+    "responser": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "type": "string",
+                "description": "The reason for the response given by the user"
+            },
+            "response": {
+                "type": "string",
+                "description": "The response given by the user"
+            }
+        },
+        "required": ["reason", "response"]
+    },
+    "macrs_reflection": {
+        "type": "object",
+        "properties": {
+          "recommend_suggestion": {
+            "type": "string",
+            "description": "The recommendation suggestion"
+          },
+          "ask_suggestion": {
+            "type": "string",
+            "description": "The asking suggestion"
+          },
+          "chit_suggestion": {
+            "type": "string",
+            "description": "The chit-chat suggestion"
+          },
+          "plan_suggestion": {
+            "type": "string",
+            "description": "The planning suggestion"
+          }
+        },
+        "required": ["recommend_suggestion", "ask_suggestion", "chit_suggestion", "plan_suggestion"]
+    }
+}

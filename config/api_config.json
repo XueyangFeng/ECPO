@@ -1,0 +1,28 @@
+{
+    "qwen": {
+      "base_url": "http://localhost:8081/v1",
+      "api_key": "qwen-fxy",
+      "model_path": "/data/pretrain_dir/Qwen2.5-7B-Instruct"
+    },
+    "openai": {
+      "base_url": "https://api.chatanywhere.tech/v1",
+      "api_key": "sk-Q348B4yzh3hJ2sZhpLsytv7VBotBRg89KerTlXBJdliooXYv",
+      "model_path": "gpt-4o"
+    },
+    "openai_mini": {
+      "base_url": "https://api.chatanywhere.tech/v1",
+      "api_key": "sk-Q348B4yzh3hJ2sZhpLsytv7VBotBRg89KerTlXBJdliooXYv",
+      "model_path": "gpt-4o-mini-2024-07-18"
+    },
+    "llama":{
+      "base_url": "http://localhost:8093/v1",
+      "api_key": "llama-fxy",
+      "model_path": "/data/fengxueyang/.cache/modelscope/hub/LLM-Research/Meta-Llama-3.1-8B-Instruct"
+    },
+    "openai_35":{
+      "base_url": "https://api.chatanywhere.tech/v1",
+      "api_key": "Tkuo0YcFziybn8kXcuXFaR2wuRQoh04IX7kyroOJ2YXRMLoc",
+      "model_path": "gpt-3.5-turbo-ca"
+    }
+}
+  

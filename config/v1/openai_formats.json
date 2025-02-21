@@ -1,0 +1,206 @@
+{
+  "point": {
+  "type": "json_schema",
+  "json_schema": {
+    "name": "user_feedback",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "The reason for the rating given by the user"
+        },
+        "rating": {
+          "type": "string",
+          "description": "The rating given by the user",
+          "enum": ["1", "2", "3", "4", "5"]
+        },
+        "policy": {
+          "type": "string",
+          "description": "The response strategy selected from predefined options",
+          "enum": [
+            "ask_recommendation",         
+            "request_more_info",         
+            "provide_feedback",           
+            "adjust_preferences",         
+            "end_conversation",
+            "chitchat"            
+          ] 
+        },
+        "response": {
+          "type": "string",
+          "description": "The user's actual response or feedback"
+        }
+      },
+      "required": ["reason", "rating", "policy", "response"],
+      "additionalProperties": false,
+      "dependencies": {
+        "rating": ["reason"]
+      }
+    },
+    "strict": true
+    }
+  },
+  "binary": {
+  "type": "json_schema",
+  "json_schema": {
+    "name": "user_feedback",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "The reason for the rating given by the user"
+        },
+        "rating": {
+          "type": "string",
+          "description": "The rating given by the user",
+          "enum": ["0", "1"]
+        },
+        "policy": {
+          "type": "string",
+          "description": "The response strategy selected from predefined options",
+          "enum": [
+            "ask_recommendation",         
+            "request_more_info",         
+            "provide_feedback",                  
+            "end_conversation",
+            "chitchat"            
+          ] 
+        },
+        "response": {
+          "type": "string",
+          "description": "The user's actual response or feedback"
+        }
+      },
+      "required": ["reason", "rating", "policy", "response"],
+      "additionalProperties": false,
+      "dependencies": {
+        "rating": ["reason"]
+      }
+    },
+    "strict": true
+    }
+  },
+  "review": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "user_review",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "preference": {
+            "type": "string",
+            "description": "The rating given by the user",
+            "enum": ["0", "1"]
+          },
+          "comment": {
+            "type": "string",
+            "description": "The user's comment on the item"
+          }
+        },
+        "required": ["preference", "comment"]
+      },
+      "strict": true
+      }
+    },
+  "responser": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "user_response",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The reason for the response given by the user"
+          },
+          "response": {
+            "type": "string",
+            "description": "The response given by the user"
+          }
+        },
+        "required": ["reason", "response"],
+        "additionalProperties": false
+      },
+      "strict": true
+    }
+  },
+  "recommender_rater": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "user_rating_recommender",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The reason for the rating given by the user"
+          },
+          "rating": {
+            "type": "string",
+            "description": "The rating given by the user",
+            "enum": ["0", "1", "2", "3", "4", "5"]
+          }
+        },
+        "required": ["reason", "rating"],
+        "additionalProperties": false
+      },
+      "strict": true
+    }
+  },
+  "policy_rater": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "user_rating_policy",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The reason for the rating given by the user"
+          },
+          "rating": {
+            "type": "string",
+            "description": "The rating given by the user",
+            "enum": ["1", "2", "3", "4", "5"]
+          }
+        },
+        "required": ["reason", "rating"],
+        "additionalProperties": false
+      },
+      "strict": true
+    }
+  },
+  "policy_selector": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "user_policy_selection",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The reason for the policy selected by the user"
+          },
+          "policy": {
+            "type": "string",
+            "description": "The response policy selected by the user",
+            "enum": [
+              "ask_recommendation",
+              "request_more_info",
+              "provide_feedback",
+              "end_conversation"
+            ]
+          }
+        },
+        "required": ["reason", "policy"],
+        "additionalProperties": false,
+        "dependencies": {
+          "policy": ["reason"]
+        }
+      },
+      "strict": true
+    }
+  }
+}
