@@ -1,7 +1,6 @@
-# **AILO-Pipeline: Building a Persona-Based Recommendation System**  
-
+# **AILO-Pipeline**
 <div  align="center">    
-<img src="../pic/ailo.png" width = "600" height = "400" alt="pic" align=center />
+<img src="../pic/ailo.png" width = "1000" height = "400" alt="pic" align=center />
 </div>
 
 If you don’t need additional data processing, we have already provided the processed dataset in the [`task`](./task) folder for direct use.  
