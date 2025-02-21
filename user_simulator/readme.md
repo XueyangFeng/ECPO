@@ -17,13 +17,13 @@ If you prefer to build your dataset from scratch, you can download the original 
 
 ### **🔹 Data Processing Workflow**
 1. **User & Item Sampling**  
-   - Run [`preprocess.py`](./preprocess.py) to sample users and match them with their interacted items.
+   - Run [`preprocess.py`](./raw_data/preprocess.py) to sample users and match them with their interacted items.
 
 2. **Item Summarization**  
-   - Run [`abstract.py`](./abstract.py) to generate item summaries using LLM to prevent excessive and irrelevant information.
+   - Run [`abstract.py`](./raw_data/abstract.py) to generate item summaries using LLM to prevent excessive and irrelevant information.
 
 3. **Extracting User-Interacted Items**  
-   - Run [`item_extract.py`](./item_extract.py) to extract items users have interacted with and merge them into JSONL files:
+   - Run [`item_extract.py`](./raw_data/item_extract.py) to extract items users have interacted with and merge them into JSONL files:
      - **Target Items** (Rating ≥ 4.0): [`high_rating_item.jsonl`](./high_rating_item.jsonl)  
      - **All Interacted Items**: [`item.jsonl`](./item.jsonl) (for database construction)
 
@@ -32,16 +32,16 @@ If you prefer to build your dataset from scratch, you can download the original 
 ## **📌 2. Database Construction**  
 
 We selected **100 users, each interacting with approximately 30 items**, totaling around 3,000 items to build the recommendation task database.  
-The database is encoded using **[ALL-MiniLM-L6](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)** and indexed for external retrieval.
+The database is encoded using **[all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)** and indexed for external retrieval.
 
 ### **🔹 Database Construction Workflow**
 1. **Data Deduplication**  
    - Run [`dup.py`](./embedding/dup.py) to remove duplicate items.
 
 2. **Item Encoding & Indexing**  
-   - Run [`embedding.ipynb`](./embedding/embedding.ipynb) to encode items and build the index.
+   - Run [`item_embedding.ipynb`](./embedding/item_embedding.ipynb) to encode items and build the index.
 
-💡 **Note**: If you do not want to build the database yourself, we provide a **[prebuilt index database](xxxurl)** for direct download and use.
+💡 **Note**: If you do not want to build the database yourself, we provide a **[prebuilt index database](https://drive.google.com/file/d/1P6QkUrikHnwxNov0fUY3SxWQkl1qve0O/view?usp=drive_link)** for direct download and use.
 
 ---
 
@@ -51,13 +51,13 @@ In this stage, we extract user personas from their interaction records using LLM
 
 ### **🔹 Persona Construction Workflow**
 1. **Extracting User Persona**  
-   - Run [`persona_produce.py`](./persona_produce.py) to extract users' potential attributes from [`processed_data_with_summaries.jsonl`](./processed_data_with_summaries.jsonl).
+   - Run [`persona_produce.py`](./persona/persona_produce.py) to extract users' potential attributes from [`processed_data_with_summaries.jsonl`](./processed_data_with_summaries.jsonl).
 
 2. **Persona Refinement**  
-   - Run [`persona_rewrite.py`](./persona_rewrite.py) to **enhance personas for a more natural conversational recommendation experience**.
+   - Run [`persona_rewrite.py`](./persona/persona_rewrite.py) to **enhance personas for a more natural conversational recommendation experience**.
 
 3. **Splitting Training & Testing Sets**  
-   - Run [`split.py`](./split.py) to generate the final training and testing datasets.
+   - Run [`split.py`](./persona/split.py) to generate the final training and testing datasets.
 
 ---
 
@@ -65,10 +65,6 @@ In this stage, we extract user personas from their interaction records using LLM
 
 💾 **The final task dataset is available in the [`task`](./task) directory for direct use.**  
 
-- **Persona Data** (Refined): [`personas_crs_yelp.jsonl`](./personas_crs_yelp.jsonl)  
-- **High-Rating Items Data**: [`high_rating_item.jsonl`](./high_rating_item.jsonl)  
-- **Final Training & Testing Sets**:
-  - **Training Set**: [`Yelp_train.jsonl`](./Yelp_train.jsonl)  
-  - **Testing Set**: [`Yelp_test.jsonl`](./Yelp_test.jsonl)  
+ - **Training Set**: [`{Dataset}_train.jsonl`](./task/)  
+ - **Testing Set**: [`{Dataset}_test.jsonl`](./task/)  
 
-## 
