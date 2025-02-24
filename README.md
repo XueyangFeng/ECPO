@@ -47,6 +47,7 @@ bash main_lora.sh
 Then, test dialogue metric using gpt-4o evaluator:
 ```
 cd pair_eval
+#setting your eval targeted log file (model2.log), expert traj (model1.log) in file.
 python eval.py
 ```
 
@@ -62,6 +63,6 @@ The Comparison of aligned CRAs fine-tuned with different methods in terms of int
 <img src="./pic/exp2.png" width = "100%" alt="pic" align=center />
 </div>
 
-We provide original evaluation:
-under `results/book`, `results/game`, and `results/yelp`.
+We provide a series of [test raw log](test_log) data for reference.
+
 
