@@ -33,9 +33,9 @@ In this article, all LLM calls are made through OpenAI-like interfaces. Please s
 For existing prompt-based CRAs, you can set the relevant config directly in main.sh and run it.
 
 Our CRA alignment consist of 4 stages: SGPT (Stage 1), ECPO (Stage 2-4)
-- [Simulator-Guided Planning Tuning](backward/{dataset}/sft)
+- [Simulator-Guided Planning Tuning](backward/book/sft)
 - [Forward Expectation Confirmation](forward/)
-- [Backward Expectation Derivation](backward/{dataset}/ecpo)
+- [Backward Expectation Derivation](backward/book/ecpo)
 - [Preference Optimization](LLaMA-Factory/ecpo)
 
 
