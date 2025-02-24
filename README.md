@@ -2,14 +2,9 @@
 This repository is based on our paper: Expectation Confirmation Preference Optimization for Multi-Turn Conversational Recommendation Agent.
 
 <div  align="center">    
-<img src="./pic/ecpo.png" width = "1000" height = "600" alt="pic" align=center />
+<img src="./pic/ecpo.png" width = "1000" height = "615" alt="pic" align=center />
 </div>
 
-## Overview
-- The Code for different datasets is in `hotpotqa/`, `strategyqa/`, and `intercode/`.
-  - start training by `scripts/run.sh`
-  - local test environment is in `test_data/`
-- Human-Agent Collaboration Dataset in `dataset/`
 
 ## Usage
 ### Getting Start
@@ -33,23 +28,40 @@ In this article, all LLM calls are made through OpenAI-like interfaces. Please s
 For existing prompt-based CRAs, you can set the relevant config directly in main.sh and run it.
 
 Our CRA alignment consist of 4 stages: SGPT (Stage 1), ECPO (Stage 2-4)
-- Simulator-Guided Planning Tuning: backward/{dataset}/sft
-- Forward Expectation Confirmation: forward/user_agent_env_v1.py
-- Backward Expectation Derivation: backward/{dataset}/ecpo
-- Preference Optimization: LLaMA-Factory/ecpo
+- [Simulator-Guided Planning Tuning](backward/book/sft)
+- [Forward Expectation Confirmation](forward/)
+- [Backward Expectation Derivation](backward/book/ecpo)
+- [Preference Optimization](LLaMA-Factory/ecpo)
+
+
+### Evaluation
+
+First, test recommendation metric using simulator environment:
+```
+# test existing prompt-based CRA baseline
+bash main.sh
+# test aligned CRA.
+bash main_lora.sh
+```
+
+Then, test dialogue metric using gpt-4o evaluator:
+```
+cd pair_eval
+python eval.py
+```
 
 
 ## Results
-The evaluation result of HotpotQA dataset is under the following figure:
+The Comparison with existing prompt-based CRAs
 <div  align="center">    
-<img src="./pic/main_result.png" width = "100%" alt="pic" align=center />
+<img src="./pic/exp1.png" width = "100%" alt="pic" align=center />
 </div>
 
-
+The Comparison of aligned CRAs fine-tuned with different methods in terms of interactivity:
 <div  align="center">    
-<img src="./pic/curve.png" width = "100%" alt="pic" align=center />
+<img src="./pic/exp2.png" width = "100%" alt="pic" align=center />
 </div>
 
-We provide original evaluation outputs of ReHAC
+We provide original evaluation:
 under `results/book`, `results/game`, and `results/yelp`.
 
