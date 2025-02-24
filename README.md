@@ -40,12 +40,12 @@ Our CRA alignment consist of 4 stages: SGPT (Stage 1), ECPO (Stage 2-4)
 
 
 ## Results
-The evaluation result is under the following figure:
+The Comparison with existing prompt-based CRAs
 <div  align="center">    
 <img src="./pic/exp1.png" width = "100%" alt="pic" align=center />
 </div>
 
-
+The Comparison of aligned CRAs fine-tuned with different methods in terms of interactivity:
 <div  align="center">    
 <img src="./pic/exp2.png" width = "100%" alt="pic" align=center />
 </div>
