@@ -5,11 +5,6 @@ This repository is based on our paper: Expectation Confirmation Preference Optim
 <img src="./pic/ecpo.png" width = "1000" height = "615" alt="pic" align=center />
 </div>
 
-## Overview
-- The Code for different datasets is in `hotpotqa/`, `strategyqa/`, and `intercode/`.
-  - start training by `scripts/run.sh`
-  - local test environment is in `test_data/`
-- Human-Agent Collaboration Dataset in `dataset/`
 
 ## Usage
 ### Getting Start
@@ -37,6 +32,23 @@ Our CRA alignment consist of 4 stages: SGPT (Stage 1), ECPO (Stage 2-4)
 - [Forward Expectation Confirmation](forward/)
 - [Backward Expectation Derivation](backward/book/ecpo)
 - [Preference Optimization](LLaMA-Factory/ecpo)
+
+
+### Evaluation
+
+First, test recommendation metric using simulator environment:
+```
+# test existing prompt-based CRA baseline
+bash main.sh
+# test aligned CRA.
+bash main_lora.sh
+```
+
+Then, test dialogue metric using gpt-4o evaluator:
+```
+cd pair_eval
+python eval.py
+```
 
 
 ## Results
