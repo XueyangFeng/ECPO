@@ -40,14 +40,14 @@ First, test recommendation metric using simulator environment:
 ```
 # test existing prompt-based CRA baseline
 bash main.sh
-# test aligned CRA.
+# test aligned CRA
 bash main_lora.sh
 ```
 
 Then, test dialogue metric using gpt-4o evaluator:
 ```
 cd pair_eval
-#setting your eval targeted log file (model2.log), expert traj (model1.log) in file.
+#setting your eval targeted log file (model2.log), expert traj (model1.log) in file
 python eval.py
 ```
 
