@@ -33,23 +33,23 @@ In this article, all LLM calls are made through OpenAI-like interfaces. Please s
 For existing prompt-based CRAs, you can set the relevant config directly in main.sh and run it.
 
 Our CRA alignment consist of 4 stages: SGPT (Stage 1), ECPO (Stage 2-4)
-- Simulator-Guided Planning Tuning: backward/{dataset}/sft
-- Forward Expectation Confirmation: forward/user_agent_env_v1.py
-- Backward Expectation Derivation: backward/{dataset}/ecpo
-- Preference Optimization: LLaMA-Factory/ecpo
+- [Simulator-Guided Planning Tuning](backward/{dataset}/sft)
+- [Forward Expectation Confirmation](forward/)
+- [Backward Expectation Derivation](backward/{dataset}/ecpo)
+- [Preference Optimization](LLaMA-Factory/ecpo)
 
 
 ## Results
-The evaluation result of HotpotQA dataset is under the following figure:
+The evaluation result is under the following figure:
 <div  align="center">    
-<img src="./pic/main_result.png" width = "100%" alt="pic" align=center />
+<img src="./pic/exp1.png" width = "100%" alt="pic" align=center />
 </div>
 
 
 <div  align="center">    
-<img src="./pic/curve.png" width = "100%" alt="pic" align=center />
+<img src="./pic/exp2.png" width = "100%" alt="pic" align=center />
 </div>
 
-We provide original evaluation outputs of ReHAC
+We provide original evaluation:
 under `results/book`, `results/game`, and `results/yelp`.
 
