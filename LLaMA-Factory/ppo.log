@@ -1,0 +1,442 @@
+[INFO|2024-12-14 13:49:06] llamafactory.cli:157 >> Initializing distributed tasks at: 127.0.0.1:23062
+W1214 13:49:07.860744 140395305092928 torch/distributed/run.py:779] 
+W1214 13:49:07.860744 140395305092928 torch/distributed/run.py:779] *****************************************
+W1214 13:49:07.860744 140395305092928 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1214 13:49:07.860744 140395305092928 torch/distributed/run.py:779] *****************************************
+[WARNING|2024-12-14 13:49:12] llamafactory.hparams.parser:162 >> `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|2024-12-14 13:49:12] llamafactory.hparams.parser:355 >> Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+[INFO|configuration_utils.py:677] 2024-12-14 13:49:12,779 >> loading configuration file /data/pretrain_dir/Llama-3.1/config.json
+[INFO|configuration_utils.py:746] 2024-12-14 13:49:12,780 >> Model config LlamaConfig {
+  "_name_or_path": "/data/pretrain_dir/Llama-3.1",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": [
+    128001,
+    128008,
+    128009
+  ],
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "factor": 8.0,
+    "high_freq_factor": 4.0,
+    "low_freq_factor": 1.0,
+    "original_max_position_embeddings": 8192,
+    "rope_type": "llama3"
+  },
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.46.1",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:12,781 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:12,781 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:12,781 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:12,781 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:12,781 >> loading file tokenizer_config.json
+[INFO|2024-12-14 13:49:12] llamafactory.hparams.parser:355 >> Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+[INFO|tokenization_utils_base.py:2475] 2024-12-14 13:49:13,151 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:677] 2024-12-14 13:49:13,152 >> loading configuration file /data/pretrain_dir/Llama-3.1/config.json
+[INFO|configuration_utils.py:746] 2024-12-14 13:49:13,153 >> Model config LlamaConfig {
+  "_name_or_path": "/data/pretrain_dir/Llama-3.1",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": [
+    128001,
+    128008,
+    128009
+  ],
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "factor": 8.0,
+    "high_freq_factor": 4.0,
+    "low_freq_factor": 1.0,
+    "original_max_position_embeddings": 8192,
+    "rope_type": "llama3"
+  },
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.46.1",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:13,154 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:13,154 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:13,154 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:13,154 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2209] 2024-12-14 13:49:13,154 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2475] 2024-12-14 13:49:13,519 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|2024-12-14 13:49:13] llamafactory.data.template:157 >> Replace eos token: <|eot_id|>
+[INFO|2024-12-14 13:49:13] llamafactory.data.template:157 >> Add pad token: <|eot_id|>
+[INFO|2024-12-14 13:49:13] llamafactory.data.loader:157 >> Loading dataset /data/fxy/ecpo/preference_optimization/ppo/amazon_book_ppo.json...
+Setting num_proc from 16 back to 1 for the train split to disable multiprocessing as it only contains one shard.
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 1767 examples [00:00, 17063.68 examples/s]Generating train split: 1767 examples [00:00, 17008.38 examples/s]
+Converting format of dataset (num_proc=16):   0%|          | 0/1767 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16):  75%|███████▌  | 1327/1767 [00:00<00:00, 12188.93 examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1767/1767 [00:00<00:00, 8387.17 examples/s] 
+Running tokenizer on dataset (num_proc=16):   0%|          | 0/1767 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 111/1767 [00:01<00:16, 101.82 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 333/1767 [00:01<00:04, 291.80 examples/s]Running tokenizer on dataset (num_proc=16):  25%|██▌       | 444/1767 [00:01<00:03, 376.91 examples/s]Running tokenizer on dataset (num_proc=16):  31%|███▏      | 555/1767 [00:01<00:02, 460.87 examples/s]Running tokenizer on dataset (num_proc=16):  38%|███▊      | 666/1767 [00:01<00:02, 539.27 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 777/1767 [00:01<00:01, 610.52 examples/s]Running tokenizer on dataset (num_proc=16):  50%|█████     | 887/1767 [00:02<00:01, 661.92 examples/s]Running tokenizer on dataset (num_proc=16):  56%|█████▋    | 997/1767 [00:02<00:01, 706.39 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 1107/1767 [00:02<00:01, 648.79 examples/s]Running tokenizer on dataset (num_proc=16):  75%|███████▌  | 1327/1767 [00:02<00:00, 935.19 examples/s]Running tokenizer on dataset (num_proc=16):  81%|████████▏ | 1437/1767 [00:02<00:00, 963.23 examples/s]Running tokenizer on dataset (num_proc=16):  88%|████████▊ | 1547/1767 [00:02<00:00, 939.95 examples/s]Running tokenizer on dataset (num_proc=16):  94%|█████████▍| 1657/1767 [00:02<00:00, 771.53 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1767/1767 [00:03<00:00, 762.90 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1767/1767 [00:03<00:00, 564.21 examples/s]
+training example:
+input_ids:
+[128000, 128006, 9125, 128007, 271, 2675, 527, 264, 11190, 18328, 128009, 128006, 882, 128007, 271, 50, 4035, 28782, 9256, 555, 96068, 2370, 330, 38863, 367, 1, 323, 330, 2573, 1, 7504, 382, 2573, 25, 22991, 832, 315, 279, 2768, 6299, 3196, 389, 279, 6671, 512, 7, 16, 8, 7694, 58, 44942, 5787, 7694, 369, 9959, 2038, 1701, 17550, 21513, 311, 12576, 304, 24038, 3230, 18726, 13, 4815, 7, 17, 8, 21069, 58, 14924, 5787, 5783, 533, 449, 279, 1217, 311, 38263, 872, 19882, 477, 17413, 13, 5560, 19092, 34685, 311, 27115, 45063, 872, 8670, 13, 4815, 7, 18, 8, 47706, 58, 16533, 5787, 40665, 19075, 3196, 389, 2561, 2038, 323, 33811, 13, 89520, 649, 8854, 1403, 10096, 1473, 45053, 269, 5382, 30145, 25, 40665, 264, 76220, 28782, 994, 2038, 374, 33243, 311, 9762, 1217, 11302, 323, 46464, 19882, 627, 19918, 30145, 25, 40665, 264, 2867, 323, 16195, 28782, 994, 14343, 2038, 374, 2561, 382, 68744, 811, 2011, 1005, 279, 2539, 4113, 2316, 31503, 505, 279, 4729, 11, 369, 3187, 25, 47706, 330, 33, 598, 50153, 25, 578, 10657, 76508, 354, 507, 68070, 5169, 49105, 320, 791, 76508, 354, 507, 68070, 5169, 30727, 4804, 6017, 220, 17, 11844, 539, 264, 4096, 477, 66663, 2373, 315, 279, 2316, 382, 7, 19, 8, 6075, 58, 2831, 5787, 9356, 1217, 44983, 11, 3790, 1022, 86800, 24208, 11, 477, 6013, 311, 46305, 7540, 311, 10519, 264, 5933, 323, 56887, 10652, 6530, 382, 2675, 1253, 1935, 439, 1690, 7504, 439, 5995, 311, 8641, 279, 1217, 9017, 279, 1455, 14791, 28782, 13, 5321, 1988, 279, 1957, 6089, 11, 656, 539, 1988, 279, 5217, 330, 2573, 308, 3343, 70589, 1473, 38863, 367, 220, 15, 25, 358, 2846, 3411, 369, 264, 2363, 430, 18911, 3925, 304, 264, 5016, 1648, 627, 2573, 220, 15, 25, 128009, 128006, 78191, 128007, 271]
+inputs:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Solve recommendation tasks by interleaving "Observation" and "Action" steps.
+
+Action: Choose one of the following actions based on the situation:
+(1) Search[Keywords]: Search for relevant information using targeted keywords to aid in generating specific suggestions. 
+
+(2) Ask[Question]: Interact with the user to clarify their preferences or constraints. Use strategic questioning to gradually uncover their requirements. 
+
+(3) Recommend[Answer]: Provide recommendations based on available information and reasoning. Recommendations can serve two purposes:
+
+Exploratory Purpose: Provide a tentative recommendation when information is incomplete to gather user feedback and refine preferences.
+Final Purpose: Provide a clear and comprehensive recommendation when sufficient information is available.
+
+Recommendations must use the full original title retrieved from the database, for example: Recommend "Banshee: The Second Dermot O'Hara Mystery (The Dermot O'Hara Mysteries Book 2)", not a description or shortened version of the title.
+
+(4) Response[Content]: Address user inquiries, handle off-topic remarks, or respond to unrelated requests to maintain a natural and coherent conversation flow.
+
+You may take as many steps as necessary to guide the user toward the most suitable recommendation. Please input the action directly, do not input the additional "Action n". Dialogue:
+
+Observation 0: I'm looking for a book that presents history in a unique way.
+Action 0:<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+[INFO|configuration_utils.py:677] 2024-12-14 13:49:19,221 >> loading configuration file /data/pretrain_dir/Llama-3.1/config.json
+[INFO|configuration_utils.py:746] 2024-12-14 13:49:19,223 >> Model config LlamaConfig {
+  "_name_or_path": "/data/pretrain_dir/Llama-3.1",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": [
+    128001,
+    128008,
+    128009
+  ],
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "factor": 8.0,
+    "high_freq_factor": 4.0,
+    "low_freq_factor": 1.0,
+    "original_max_position_embeddings": 8192,
+    "rope_type": "llama3"
+  },
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.46.1",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+[INFO|modeling_utils.py:3934] 2024-12-14 13:49:19,276 >> loading weights file /data/pretrain_dir/Llama-3.1/model.safetensors.index.json
+[INFO|modeling_utils.py:1670] 2024-12-14 13:49:19,277 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:1096] 2024-12-14 13:49:19,279 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": [
+    128001,
+    128008,
+    128009
+  ]
+}
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.02it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.05it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.05it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.05it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.42it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.25it/s]
+[INFO|modeling_utils.py:4800] 2024-12-14 13:49:22,569 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:4808] 2024-12-14 13:49:22,569 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /data/pretrain_dir/Llama-3.1.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:1049] 2024-12-14 13:49:22,572 >> loading configuration file /data/pretrain_dir/Llama-3.1/generation_config.json
+[INFO|configuration_utils.py:1096] 2024-12-14 13:49:22,573 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "do_sample": true,
+  "eos_token_id": [
+    128001,
+    128008,
+    128009
+  ],
+  "temperature": 0.6,
+  "top_p": 0.9
+}
+
+[INFO|2024-12-14 13:49:22] llamafactory.model.model_utils.checkpointing:157 >> Gradient checkpointing enabled.
+[INFO|2024-12-14 13:49:22] llamafactory.model.model_utils.attention:157 >> Using torch SDPA for faster training and inference.
+[INFO|2024-12-14 13:49:22] llamafactory.model.adapter:157 >> Upcasting trainable params to float32.
+[INFO|2024-12-14 13:49:22] llamafactory.model.adapter:157 >> Fine-tuning method: LoRA
+Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.26it/s]
+[INFO|2024-12-14 13:49:23] llamafactory.model.adapter:157 >> Loaded adapter(s): /data/fxy/ecpo/fine-tuning/sft/Book/lr5.0e-5_epochs3.0
+[INFO|2024-12-14 13:49:23] llamafactory.model.model_utils.valuehead:157 >> Provided path (/data/fxy/ecpo/fine-tuning/sft/Book/lr5.0e-5_epochs3.0) does not contain value head weights: /data/fxy/ecpo/fine-tuning/sft/Book/lr5.0e-5_epochs3.0 does not appear to have a file named value_head.bin. Checkout 'https://huggingface.co//data/fxy/ecpo/fine-tuning/sft/Book/lr5.0e-5_epochs3.0/tree/None' for available files..
+[INFO|2024-12-14 13:49:23] llamafactory.model.model_utils.valuehead:157 >> Ignore the above message if you are not resuming the training of a value head model.
+[INFO|2024-12-14 13:49:23] llamafactory.model.loader:157 >> trainable params: 20,975,617 || all params: 8,051,236,865 || trainable%: 0.2605
+[INFO|2024-12-14 13:49:23] llamafactory.train.trainer_utils:157 >> Loaded adapter weights of reward model from /data/fxy/ecpo/fine-tuning/reward
+[WARNING|trainer.py:765] 2024-12-14 13:49:23,456 >> Trainer.tokenizer is now deprecated. You should use `Trainer.processing_class = processing_class` instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:23,461 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use `Trainer.processing_class = processing_class` instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:25,230 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:25,231 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:25,231 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:25,231 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >> ***** Running training *****
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Num examples = 1,767
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Num Epochs = 3.0
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Instantaneous batch size per device = 1
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Total train batch size (w. parallel, buffer, distributed & accumulation) = 16
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Gradient Accumulation steps = 8
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Num optimization epochs per batch = 4
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Total training steps = 330
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[INFO|2024-12-14 13:49:25] llamafactory.train.ppo.trainer:157 >>   Number of trainable parameters = 20,975,617
+  0%|          | 0/330 [00:00<?, ?it/s][WARNING|trainer.py:760] 2024-12-14 13:49:26,001 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:26,001 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:28,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:28,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:28,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:28,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:28,237 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:38,279 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:38,280 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:38,280 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:38,280 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:38,431 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:43,035 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:43,035 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:43,035 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:43,035 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:43,148 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:44,120 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:44,120 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:44,120 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:44,120 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:44,225 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:45,964 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:45,964 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:45,964 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:45,964 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:46,116 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:49,499 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:49,500 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:49,500 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:49,500 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:49,612 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:51,622 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:51,623 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:51,623 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:51,623 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:51,772 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:58,229 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:58,229 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:58,229 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:58,229 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:58,377 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:49:58,377 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:52,743 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+  0%|          | 1/330 [01:27<7:59:49, 87.51s/it]Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:52,765 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:52,765 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:53,756 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:53,756 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:53,756 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:53,757 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:53,849 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:57,457 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:57,457 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:57,457 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:57,457 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:50:57,648 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:02,013 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:02,013 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:02,013 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:02,013 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:02,166 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:03,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:03,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:03,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:03,085 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:03,211 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:04,747 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:04,747 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:04,747 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:04,747 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:04,896 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:09,579 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:09,580 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:09,580 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:09,580 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:09,767 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:13,346 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:13,346 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:13,347 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:13,347 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:13,450 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:22,263 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:22,263 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:22,263 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:22,263 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:22,439 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+[WARNING|trainer.py:760] 2024-12-14 13:51:22,439 >> Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+Trainer.tokenizer is now deprecated. You should use Trainer.processing_class instead.
+W1214 13:51:33.400130 140395305092928 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGHUP death signal, shutting down workers
+W1214 13:51:33.400889 140395305092928 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 3691403 closing signal SIGHUP
+W1214 13:51:33.401088 140395305092928 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 3691404 closing signal SIGHUP
+Traceback (most recent call last):
+  File "/data/fxy/anaconda3/envs/ecpo/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
+    result = agent.run()
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
+    result = self._invoke_run(role)
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 835, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/data/fxy/anaconda3/envs/ecpo/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 79, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 3691338 got signal: 1
