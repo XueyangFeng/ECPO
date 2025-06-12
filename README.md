@@ -66,20 +66,6 @@ python eval.py
 ```
 
 
-## Results
-
-### **Comparison with Existing Prompt-Based CRAs**
-<div align="center">    
-  <img src="./pic/exp1.png" width="100%" alt="Comparison with Prompt-Based CRAs" />
-</div>
-
-### **Comparison of Aligned CRAs Fine-Tuned with Different Methods in Terms of Interactivity**
-<div align="center">    
-  <img src="./pic/exp2.png" width="100%" alt="Comparison of Aligned CRAs" />
-</div>
-
-We also provide a series of [test raw log](test_log) data for reference.
-
 ## References
 1. Our evaluation method is based on [RUCAIBox/iEvaLM-CRS](https://github.com/RUCAIBox/iEvaLM-CRS).
 2. Our training code is based on [hiyouga/LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
