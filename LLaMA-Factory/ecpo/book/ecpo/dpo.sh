@@ -13,6 +13,8 @@ mkdir -p $OUTPUT_DIR
 nohup llamafactory-cli train \
   --model_name_or_path /your/base/model/path \
   --adapter_name_or_path /your/sft/lora/path \
+  --ref_model /your/base/model/path \
+  --ref_model_adapters /your/sft/lora/path \
   --stage dpo \
   --do_train true \
   --finetuning_type lora \
